@@ -103,7 +103,7 @@ function checkRoundWinner(playerPick, computerPick) {
         computerResultElem.innerHTML = 'Draw!';
         playerResultElem.innerHTML = 'Draw!';
     }
-        console.log(setGamePoints());
+        setGamePoints();
 }
 
 function playerPick(playerPick) {
@@ -118,21 +118,19 @@ function playerPick(playerPick) {
 function setGamePoints() {
     playerPointsElem.innerHTML = player.score;
     computerPointsElem.innerHTML = computer.score;
-    if (player.score > 9) {
+    if (player.score > 4) {
         playerResultElem.innerHTML = 'Zwycięzca gry!';
-        //function raiseAlarm() {
-            console.log(newGame());
-        //}
-        //var delayedAlert = setTimeout(raiseAlarm, 2000);
-        //setTimeout(stop, 2000);
+        console.log(gameState + ' Wygrał player!');
+        alert('Wygrał gracz!');
+        setGameElements();
+        console.log(newGame());
 
-    } else if (computer.score > 9) {
+    } else if (computer.score > 4) {
         computerResultElem.innerHTML = 'Zwycięzca gry!';
-        //function raiseAlarm() {
-            console.log(newGame());
-       // }
-        //var delayedAlert = setTimeout(raiseAlarm, 2000);
-       // setTimeout(stop, 2000);
+        console.log(gameState + ' Wygrał computer!');
+        alert('Wygrał komputer!');
+        setGameElements();
+        console.log(newGame());
     }
 }
 
